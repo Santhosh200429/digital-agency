@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Daddy's Kids Digital Agency</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0d0d0d;
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        .contact-section {
+            padding: 100px 20px;
+        }
+
+        .contact-section h2 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(233, 69, 96, 0.4);
+            backdrop-filter: blur(20px);
+            position: relative;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            background: rgba(255, 255, 255, 0.3);
+            outline: none;
+            box-shadow: 0 0 10px rgba(233, 69, 96, 0.8);
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 14px;
+            font-size: 18px;
+            border: none;
+            background: linear-gradient(135deg, #e94560, #ff00ff);
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 12px rgba(233, 69, 96, 0.6);
+            position: relative;
+        }
+
+        .contact-form button:hover {
+            transform: translateX(5px);
+            box-shadow: 0 0 25px rgba(233, 69, 96, 1);
+        }
+
+        .social-links {
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            font-size: 24px;
+            color: white;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #e94560;
+            transform: scale(1.2);
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(3px); }
+            100% { transform: translateX(-3px); }
+        }
+
+        .shake {
+            animation: shake 0.1s ease-in-out 3;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="contact-section">
+        <h2>Get in Touch</h2>
+        <div class="contact-form">
+            <form>
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+                <button id="submit-btn" type="submit">Send Message</button>
+            </form>
+            <p id="troll-message" style="color: #e94560; font-size: 14px; margin-top: 10px; display: none;"></p>
+        </div>
+
+        <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </section>
+
+    <script>
+        let backspaceCount = 0;
+        const messages = [
+            "Oops, did you mess up?",
+            "Backspacing again? 😆",
+            "Maybe slow down a little?",
+            "Having second thoughts?",
+            "Your keyboard is crying...",
+            "This form is getting tired of you... 😂",
+            "That’s a lot of deleting, you okay?",
+        ];
+
+        const nameInput = document.getElementById("name");
+        const submitBtn = document.getElementById("submit-btn");
+        const trollMessage = document.getElementById("troll-message");
+
+        function showTrollMessage(text) {
+            trollMessage.innerText = text;
+            trollMessage.style.display = "block";
+            setTimeout(() => trollMessage.style.display = "none", 2000);
+        }
+
+        nameInput.addEventListener("keydown", function (event) {
+            if (event.key === "Backspace") {
+                showTrollMessage(messages[backspaceCount % messages.length]);
+                backspaceCount++;
+                if (backspaceCount === 5) {
+                    nameInput.classList.add("shake");
+                    setTimeout(() => nameInput.classList.remove("shake"), 500);
+                }
+            }
+        });
+
+        submitBtn.addEventListener("mouseover", function () {
+            submitBtn.style.transform = "translateX(5px)";
+            setTimeout(() => submitBtn.style.transform = "translateX(0px)", 200);
+        });
+
+        submitBtn.addEventListener("click", function (event) {
+            event.preventDefault();
+            showTrollMessage("Your message has been sent!!");
+        });
+
+    </script>
+
+</body>
+</html>
