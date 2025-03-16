@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Daddy's Kids Digital Agency</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.4/lottie.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0d0d0d;
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* === Floating Particles === */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: -1;
+            background: url('assets/img/particles.png') repeat;
+            opacity: 0.3;
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(20px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* === About Section === */
+        .about-section {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-section h2 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(-30px);
+            animation: fadeInUp 1s ease-in-out forwards;
+        }
+
+        .about-section h2::after {
+            content: "";
+            display: block;
+            width: 120px;
+            height: 5px;
+            background: #e94560;
+            margin: 10px auto;
+            border-radius: 3px;
+            opacity: 0;
+            animation: fadeInUp 1s ease-in-out 0.2s forwards;
+        }
+
+        /* === About Content === */
+        .about-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+            padding: 20px;
+        }
+
+        .about-text {
+            max-width: 500px;
+            text-align: left;
+            padding: 20px;
+            opacity: 0;
+            animation: fadeInLeft 1s ease-in-out 0.3s forwards;
+        }
+
+        .about-text h3 {
+            font-size: 28px;
+            color: #e94560;
+        }
+
+        .about-text p {
+            font-size: 18px;
+            color: #bbb;
+            line-height: 1.8;
+        }
+
+        .about-text .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            margin-top: 20px;
+            background: #e94560;
+            color: white;
+            font-size: 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 12px rgba(233, 69, 96, 0.6);
+        }
+
+        .about-text .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(233, 69, 96, 1);
+        }
+
+        /* === Lottie Animation Container === */
+        .about-animation {
+            max-width: 500px;
+            opacity: 0;
+            animation: fadeInRight 1s ease-in-out 0.3s forwards;
+        }
+
+        #lottie-animation {
+            width: 100%;
+            height: auto;
+        }
+
+        /* === Key Features Section === */
+        .features-section {
+            background: #0d0d0d;
+            padding: 100px 20px;
+        }
+
+        .features-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .feature-box {
+            background: #222;
+            border-radius: 12px;
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(233, 69, 96, 0.8);
+        }
+
+        .feature-box i {
+            font-size: 40px;
+            color: #e94560;
+            margin-bottom: 15px;
+        }
+
+        .feature-box h4 {
+            font-size: 22px;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .feature-box p {
+            font-size: 16px;
+            color: #bbb;
+        }
+
+        /* === Animations === */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="particles"></div>
+
+    <section class="about-section">
+        <h2>Who We Are</h2>
+        <div class="about-container">
+            <div class="about-text">
+                <h3>Building Next-Gen Digital Experiences</h3>
+                <p>At Daddy's Kids Digital Agency, we specialize in creating high-end digital solutions, from UI/UX design to full-stack development and digital marketing. Our expert team ensures every project is crafted with perfection and innovation.</p>
+                <a href="contact.html" class="btn">Get in Touch</a>
+            </div>
+            <div class="about-animation">
+                <div id="lottie-animation"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="features-container">
+            <div class="feature-box">
+                <i class="fas fa-laptop-code"></i>
+                <h4>Web Development</h4>
+                <p>We create cutting-edge websites with stunning UI/UX and seamless performance.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-mobile-alt"></i>
+                <h4>App Development</h4>
+                <p>Building mobile apps with advanced features and smooth user experiences.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-chart-line"></i>
+                <h4>Digital Marketing</h4>
+                <p>SEO, branding, and social media strategies to skyrocket your business.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        var animation = lottie.loadAnimation({
+            container: document.getElementById('lottie-animation'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'assets/animations/about.json'
+        });
+    </script>
+
+</body>
+</html>

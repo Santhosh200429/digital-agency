@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Portfolio | Daddy's Kids Digital Agency</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.4/lottie.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0d0d0d;
+            color: white;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        /* === Background Parallax Effect === */
+        .parallax-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('assets/img/service/ser1.png') no-repeat center;
+            background-size: cover;
+            z-index: -1;
+            filter: brightness(0.2);
+            animation: parallaxMove 10s infinite alternate ease-in-out;
+        }
+
+        @keyframes parallaxMove {
+            from { transform: scale(1.1) translateY(0); }
+            to { transform: scale(1.2) translateY(20px); }
+        }
+
+        /* === Portfolio Section === */
+        .portfolio-section {
+            padding: 120px 20px;
+            position: relative;
+        }
+
+        .portfolio-section h2 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(-30px);
+            animation: fadeInUp 1s ease-in-out forwards;
+        }
+
+        .portfolio-section h2::after {
+            content: "";
+            display: block;
+            width: 120px;
+            height: 5px;
+            background: #e94560;
+            margin: 10px auto;
+            border-radius: 3px;
+            opacity: 0;
+            animation: fadeInUp 1s ease-in-out 0.2s forwards;
+        }
+
+        /* === Portfolio Filters === */
+        .filter-buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            opacity: 0;
+            animation: fadeInUp 1s ease-in-out 0.4s forwards;
+        }
+
+        .filter-buttons button {
+            padding: 12px 24px;
+            font-size: 16px;
+            border: none;
+            background: linear-gradient(135deg, #e94560, #ff00ff);
+            color: white;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 12px rgba(233, 69, 96, 0.6);
+        }
+
+        .filter-buttons button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(233, 69, 96, 1);
+        }
+
+        /* === Portfolio Grid === */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            opacity: 0;
+            animation: fadeInUp 1s ease-in-out 0.6s forwards;
+        }
+
+        /* === Portfolio Item === */
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.2);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-item:hover {
+            box-shadow: 0 20px 40px rgba(233, 69, 96, 0.4);
+        }
+
+        .portfolio-item .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .portfolio-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .portfolio-item .overlay h3 {
+            margin: 10px 0;
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+
+        .portfolio-item .overlay .icon {
+            font-size: 30px;
+            margin-top: 10px;
+            color: #e94560;
+        }
+
+        /* === Animations === */
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="parallax-bg"></div>
+
+    <section class="portfolio-section">
+        <h2>Our Work</h2>
+        <div class="filter-buttons">
+            <button data-filter="all">All</button>
+            <button data-filter="web">Web Development</button>
+            <button data-filter="design">UI/UX Design</button>
+            <button data-filter="branding">Branding</button>
+        </div>
+
+        <div class="portfolio-grid">
+            <div class="portfolio-item" data-category="web">
+                <img src="assets/img/service/ser2.png" alt="Project 1">
+                <div class="overlay">
+                    <h3>Web Development</h3>
+                    <i class="fas fa-laptop-code icon"></i>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="design">
+                <img src="assets/img/service/ser3.png" alt="Project 2">
+                <div class="overlay">
+                    <h3>UI/UX Design</h3>
+                    <i class="fas fa-paint-brush icon"></i>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="branding">
+                <img src="assets/img/about/ab1.png" alt="Project 3">
+                <div class="overlay">
+                    <h3>Branding</h3>
+                    <i class="fas fa-bullhorn icon"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Portfolio Filtering
+        document.querySelectorAll(".filter-buttons button").forEach(button => {
+            button.addEventListener("click", () => {
+                const filter = button.getAttribute("data-filter");
+                document.querySelectorAll(".portfolio-item").forEach(item => {
+                    item.style.display = (filter === "all" || item.dataset.category === filter) ? "block" : "none";
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

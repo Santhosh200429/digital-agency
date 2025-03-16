@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Daddy's Kids Digital Agency</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0d0d0d;
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .blog-container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .blog-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            background: linear-gradient(90deg, #ff6a00, #ee0979);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .blog-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(255, 99, 71, 0.5);
+        }
+
+        .blog-heading {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #ff6a00;
+            margin-bottom: 10px;
+        }
+
+        .blog-content {
+            font-size: 1rem;
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            font-size: 1rem;
+            color: white;
+            background: linear-gradient(90deg, #ff6a00, #ee0979);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .read-more:hover {
+            background: linear-gradient(90deg, #ee0979, #ff6a00);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="blog-container">
+        <h1 class="blog-title">Latest Blogs</h1>
+
+        <div class="blog-card">
+            <h2 class="blog-heading">How Digital Agencies Revolutionize Business Growth</h2>
+            <p class="blog-content">Discover how digital agencies transform businesses with cutting-edge marketing strategies, web development, and innovative branding solutions.</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+
+        <div class="blog-card">
+            <h2 class="blog-heading">Top Web Development Trends in 2025</h2>
+            <p class="blog-content">Stay ahead of the curve with the latest web development trends, including AI-powered websites, motion UI, and seamless UX/UI designs.</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+
+        <div class="blog-card">
+            <h2 class="blog-heading">Boost Your Online Presence with SEO & Marketing</h2>
+            <p class="blog-content">Learn how powerful SEO techniques and data-driven marketing strategies can skyrocket your website’s traffic and conversions.</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+    </div>
+
+</body>
+</html>

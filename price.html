@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | Daddy's Kids Digital Agency</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0d0d0d;
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* === Background Animation === */
+        .background-animated {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(29, 29, 29, 1) 0%, rgba(0, 0, 0, 1) 100%);
+            z-index: -1;
+            animation: bgPulse 8s infinite alternate ease-in-out;
+        }
+
+        @keyframes bgPulse {
+            from { filter: brightness(0.8); }
+            to { filter: brightness(1); }
+        }
+
+        /* === Pricing Section === */
+        .pricing-section {
+            padding: 100px 20px;
+            position: relative;
+        }
+
+        .pricing-section h2 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(-30px);
+            animation: fadeInUp 1s ease-in-out forwards;
+        }
+
+        .pricing-section h2::after {
+            content: "";
+            display: block;
+            width: 120px;
+            height: 5px;
+            background: #e94560;
+            margin: 10px auto;
+            border-radius: 3px;
+            opacity: 0;
+            animation: fadeInUp 1s ease-in-out 0.2s forwards;
+        }
+
+        /* === Pricing Cards === */
+        .pricing-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeInUp 1s ease-in-out 0.6s forwards;
+        }
+
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            width: 320px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.2);
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(233, 69, 96, 0.4);
+        }
+
+        .pricing-card h3 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .pricing-card .price {
+            font-size: 36px;
+            font-weight: bold;
+            color: #e94560;
+            margin: 15px 0;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .pricing-card ul li {
+            font-size: 16px;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pricing-card ul li i {
+            color: #e94560;
+            margin-right: 8px;
+        }
+
+        .pricing-card .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(135deg, #e94560, #ff00ff);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 12px rgba(233, 69, 96, 0.6);
+            margin-top: 20px;
+        }
+
+        .pricing-card .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(233, 69, 96, 1);
+        }
+
+        /* === Animations === */
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background-animated"></div>
+
+    <section class="pricing-section">
+        <h2>We Will Offer the Best Price for Your Business!</h2>
+
+        <div class="pricing-cards">
+            <div class="pricing-card">
+                <h3>Standard Pack</h3>
+                <div class="price">₹2,000/month</div>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Up to 100 Keyphrases Optimized</li>
+                    <li><i class="fas fa-check-circle"></i> Custom Dashboards: 4</li>
+                    <li><i class="fas fa-check-circle"></i> Digital Marketing Expert</li>
+                    <li><i class="fas fa-check-circle"></i> Content & Link Monitoring</li>
+                    <li><i class="fas fa-check-circle"></i> Upload Your Document</li>
+                </ul>
+                <a class="btn" href="upi://pay?pa=sandy29at@oksbi&pn=Santhosh&tn=Subscription%20Payment&am=2000&cu=INR">Get Started</a>
+            </div>
+
+            <div class="pricing-card">
+                <h3>Premium Pack</h3>
+                <div class="price">₹20,000/year</div>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Everything in Standard Pack</li>
+                    <li><i class="fas fa-check-circle"></i> Free Website Redesign</li>
+                    <li><i class="fas fa-check-circle"></i> Dedicated Account Manager</li>
+                    <li><i class="fas fa-check-circle"></i> Exclusive Business Growth Plan</li>
+                </ul>
+                <a class="btn" href="upi://pay?pa=sandy29at@oksbi&pn=Santhosh&tn=Subscription%20Payment&am=20000&cu=INR">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

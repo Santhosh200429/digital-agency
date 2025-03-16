@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Daddy's Kids Digital Agency</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.4/lottie.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0d0d0d;
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* === Background Effects === */
+        .floating-blobs {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .blob {
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            background: linear-gradient(135deg, #e94560, #ff00ff);
+            filter: blur(100px);
+            border-radius: 50%;
+            opacity: 0.4;
+            animation: floatAnimation 8s infinite alternate ease-in-out;
+        }
+
+        .blob:nth-child(1) { top: 10%; left: 20%; animation-duration: 12s; }
+        .blob:nth-child(2) { top: 60%; left: 80%; animation-duration: 10s; }
+        .blob:nth-child(3) { top: 30%; left: 50%; animation-duration: 14s; }
+
+        @keyframes floatAnimation {
+            from { transform: scale(1) translateY(0); }
+            to { transform: scale(1.3) translateY(30px); }
+        }
+
+        /* === Contact Section === */
+        .contact-section {
+            padding: 100px 20px;
+            position: relative;
+        }
+
+        .contact-section h2 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(-30px);
+            animation: fadeInUp 1s ease-in-out forwards;
+        }
+
+        .contact-section h2::after {
+            content: "";
+            display: block;
+            width: 120px;
+            height: 5px;
+            background: #e94560;
+            margin: 10px auto;
+            border-radius: 3px;
+            opacity: 0;
+            animation: fadeInUp 1s ease-in-out 0.2s forwards;
+        }
+
+        /* === Contact Form === */
+        .contact-form {
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(233, 69, 96, 0.4);
+            backdrop-filter: blur(20px);
+            opacity: 0;
+            transform: scale(0.9);
+            animation: fadeInUp 1s ease-in-out 0.4s forwards;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            background: rgba(255, 255, 255, 0.3);
+            outline: none;
+            box-shadow: 0 0 10px rgba(233, 69, 96, 0.8);
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 14px;
+            font-size: 18px;
+            border: none;
+            background: linear-gradient(135deg, #e94560, #ff00ff);
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 12px rgba(233, 69, 96, 0.6);
+        }
+
+        .contact-form button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(233, 69, 96, 1);
+        }
+
+        /* === Social Media Links === */
+        .social-links {
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            font-size: 24px;
+            color: white;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #e94560;
+            transform: scale(1.2);
+        }
+
+        /* === Lottie Animation === */
+        .contact-animation {
+            max-width: 400px;
+            margin: 40px auto;
+            opacity: 0;
+            animation: fadeInUp 1s ease-in-out 0.6s forwards;
+        }
+
+        #lottie-animation {
+            width: 100%;
+        }
+
+        /* === Animations === */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="floating-blobs">
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+    </div>
+
+    <section class="contact-section">
+        <h2>Get in Touch</h2>
+        <div class="contact-form">
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+        <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+
+        <div class="contact-animation">
+            <div id="lottie-animation"></div>
+        </div>
+    </section>
+
+    <script>
+        var animation = lottie.loadAnimation({
+            container: document.getElementById('lottie-animation'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'assets/animations/contact.json'
+        });
+    </script>
+
+</body>
+</html>
