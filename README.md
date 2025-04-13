@@ -61,16 +61,6 @@ Crafted with passion, designed with flair, and coded to perfection.
 
 ---
 
-🎬 Live Preview
-
-> Click below to launch the magic!
-
-
-
-
-
-
----
 
 ✍️ Made with Love by
 
